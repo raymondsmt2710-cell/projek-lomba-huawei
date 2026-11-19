@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EduCloud-Mate — Huawei ICT Competition 2026–2027 Interactive Prototype</title>
+  <title>HarvestGuard-AI — Huawei Cloud AI Cold-Chain &amp; Zero-Waste Prototype</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,9 +12,9 @@
     body { font-family: 'Inter', sans-serif; }
     .font-mono-code { font-family: 'JetBrains Mono', monospace; }
     .tab-active {
-      background-color: #4C1D95;
+      background-color: #065F46;
       color: #FFFFFF;
-      box-shadow: 0 4px 12px rgba(76, 29, 149, 0.25);
+      box-shadow: 0 4px 12px rgba(6, 95, 70, 0.28);
     }
     .tab-inactive {
       background-color: #FFFFFF;
@@ -22,46 +22,197 @@
       border: 1px solid #E2E8F0;
     }
     .tab-inactive:hover {
-      background-color: #F5F3FF;
-      color: #4C1D95;
-      border-color: #C4B5FD;
+      background-color: #ECFDF5;
+      color: #065F46;
+      border-color: #6EE7B7;
     }
     @keyframes fadeSlide {
       from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .animate-fade { animation: fadeSlide 0.25s ease-out; }
+    :root {
+      color-scheme: light;
+      --page: #f1f3ef;
+      --surface: #fafbf8;
+      --line: #e0e5df;
+      --ink: #293831;
+      --muted: #6d786f;
+      --forest: #29443a;
+      --sage: #dce7de;
+      --sage-ink: #355545;
+      --clay: #99534e;
+    }
+    body.bg-slate-50.text-slate-800 {
+      background: var(--page);
+      color: var(--ink);
+    }
+    header.bg-gradient-to-r {
+      background: var(--forest);
+    }
+    .bg-white { background-color: var(--surface); }
+    .bg-slate-50 { background-color: #f1f3ef; }
+    .bg-slate-100 { background-color: #e9ede8; }
+    .bg-slate-900 { background-color: #293a33; }
+    .border-slate-100 { border-color: #e8ece7; }
+    .border-slate-200 { border-color: var(--line); }
+    .border-slate-300 { border-color: #ccd5cd; }
+    .text-slate-900 { color: #293831; }
+    .text-slate-800 { color: #3a4941; }
+    .text-slate-700 { color: #4c5b52; }
+    .text-slate-600 { color: #637067; }
+    .text-slate-500 { color: var(--muted); }
+    .text-slate-400 { color: #929b93; }
+    .text-emerald-300 { color: #b6cebd; }
+    .text-emerald-800 { color: #3d624b; }
+    .bg-emerald-50 { background-color: #edf2ec; }
+    .bg-emerald-100 { background-color: #e4ece4; }
+    .border-emerald-200 { border-color: #d3e0d4; }
+    .text-emerald-900 { color: #365341; }
+    .text-emerald-700 { color: #52705a; }
+    .bg-amber-50 { background-color: #f4f1e9; }
+    .bg-amber-100 { background-color: #eee9dc; }
+    .border-amber-200 { border-color: #e5ddc8; }
+    .text-amber-900 { color: #695b3d; }
+    .text-amber-800 { color: #786743; }
+    .text-amber-700 { color: #87754f; }
+    .bg-red-50 { background-color: #f5eeec; }
+    .bg-red-100 { background-color: #efe4e1; }
+    .border-red-200 { border-color: #e7d4d0; }
+    .text-red-900 { color: #704b48; }
+    .text-red-800 { color: #80504c; }
+    .text-red-700 { color: #985b55; }
+    .bg-purple-100 { background-color: #eee9f0; }
+    .text-purple-800 { color: #67566f; }
+    .text-purple-700 { color: #725d79; }
+    .bg-blue-100 { background-color: #e7edf0; }
+    .text-blue-800 { color: #4d6570; }
+    .text-blue-700 { color: #5a7682; }
+    .bg-sky-300 { background-color: #c5d6d9; }
+    .text-sky-300 { color: #b6ced0; }
+    .hover\:bg-red-700:hover { background-color: #824541; }
+    header .max-w-7xl h1 + span { background-color: #9c5651; }
+    .tab-active {
+      background-color: var(--sage);
+      color: var(--sage-ink);
+      box-shadow: none;
+    }
+    .tab-inactive {
+      background-color: var(--surface);
+      color: #59665d;
+      border-color: var(--line);
+    }
+    .tab-inactive:hover {
+      background-color: #edf2ec;
+      color: var(--sage-ink);
+      border-color: #d3e0d4;
+    }
+    .sample-btn[data-preset="apples"] {
+      background-color: #edf2ec;
+      border-color: #d3e0d4;
+    }
+    .sample-btn[data-preset="tomatoes"] {
+      background-color: #f4f1e9;
+      border-color: #e5ddc8;
+    }
+    .sample-btn[data-preset="tuna"] {
+      background-color: #f5eeec;
+      border-color: #e7d4d0;
+    }
+    .sample-btn[data-preset="apples"]:hover { background-color: #e7eee6; }
+    .sample-btn[data-preset="tomatoes"]:hover { background-color: #efebdf; }
+    .sample-btn[data-preset="tuna"]:hover { background-color: #f0e7e4; }
+    #btn-run-inspect { background-color: var(--clay); }
+    #btn-run-inspect:hover { background-color: #824541; }
+    .shadow-sm { box-shadow: 0 1px 3px rgba(37, 52, 43, 0.045); }
+    .shadow-md { box-shadow: 0 4px 14px rgba(20, 35, 27, 0.12); }
+    @media (max-width: 639px) {
+      header .max-w-7xl {
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+      header .max-w-7xl > .flex.items-center.gap-3:first-child {
+        min-width: 0;
+        align-items: flex-start;
+      }
+      header .max-w-7xl > .flex.items-center.gap-3:first-child > div:last-child {
+        min-width: 0;
+      }
+      header h1 { font-size: 1.05rem; }
+      header p { max-width: 38ch; line-height: 1.45; }
+      header h1 + span { font-size: 9px; }
+      header .max-w-7xl > .flex.items-center.gap-2.sm\:gap-3 {
+        width: 100%;
+        justify-content: flex-end;
+      }
+      main { gap: 1rem; }
+      .tab-btn { padding: 0.7rem; }
+      .tab-btn span:first-child { font-size: 0.62rem; line-height: 1.3; }
+      .tab-btn span:last-child { font-size: 0.78rem; line-height: 1.35; }
+      #sample-presets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .sample-btn { min-width: 0; min-height: 4.25rem; }
+      #photo-upload-card {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+      }
+      #photo-upload-card #photo-preview-box {
+        width: 5.5rem;
+        height: 5.5rem;
+      }
+      #photo-upload-card > div:last-child { text-align: left; }
+      #form-inspect > .grid-cols-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      #form-inspect > .grid-cols-3 > div:last-child { grid-column: 1 / -1; }
+      .shadow-sm { box-shadow: 0 1px 2px rgba(37, 52, 43, 0.04); }
+    }
+    @media (max-width: 380px) {
+      main { padding-left: 0.75rem; padding-right: 0.75rem; }
+      header .max-w-7xl { padding-left: 0.75rem; padding-right: 0.75rem; }
+      .tab-btn { padding: 0.6rem; }
+      .tab-btn span:last-child { font-size: 0.72rem; }
+      #photo-upload-card #photo-preview-box { width: 4.75rem; height: 4.75rem; }
+      #res-score, #res-shelf, #res-discount { font-size: 1.25rem; }
+    }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
 
   <!-- Top Navigation Bar -->
-  <header class="bg-gradient-to-r from-[#3B0764] via-[#4C1D95] to-[#6D28D9] text-white shadow-md sticky top-0 z-30">
+  <header class="bg-gradient-to-r from-[#064E3B] via-[#065F46] to-[#047857] text-white shadow-md sticky top-0 z-30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-white/15 border border-white/25 flex items-center justify-center font-extrabold text-lg tracking-tight">
-          EC
+        <div class="w-10 h-10 rounded-xl bg-white/15 border border-white/25 flex items-center justify-center shrink-0">
+          <svg viewBox="0 0 24 24" class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m3.5 10 8.5-5 8.5 5v8L12 23l-8.5-5z" />
+            <path d="M3.8 10.2 12 15l8.2-4.8M12 15v7.5M8 7.4l8.5 5" />
+            <path d="M13.5 8.5c.2-3.1 2.2-5 5.5-5-.1 3.2-1.8 5-5.5 5ZM13.5 8.5l3.2-3.2" />
+          </svg>
         </div>
         <div>
           <div class="flex items-center gap-2 flex-wrap">
-            <h1 class="text-lg sm:text-xl font-bold tracking-tight">EduCloud-Mate</h1>
-            <span class="text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-600 text-white">
-              Huawei Cloud AI Prototype
+            <h1 class="text-lg sm:text-xl font-bold tracking-tight">HarvestGuard-AI</h1>
+            <span class="text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#C7000B] text-white">
+              Huawei Cloud AI Track
             </span>
           </div>
-          <p class="text-xs text-purple-200">
-            Huawei ICT Competition 2026–2027 · Innovation Track (Topic 1) · Semester 3 Cohort
+          <p class="text-xs text-emerald-100">
+            Multimodal Cold-Chain Spoilage Forecaster &amp; Zero-Waste Dynamic Pricing Agent · UN SDG 12.3
           </p>
         </div>
       </div>
 
       <div class="flex items-center gap-2 sm:gap-3">
-        <div class="hidden md:flex items-center gap-2 bg-white/10 border border-white/15 rounded-lg px-3 py-1.5 text-xs">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>ModelArts MaaS &amp; Guard: <strong>Ready</strong></span>
+        <div class="hidden md:flex items-center gap-2 bg-white/10 border border-white/20 rounded-lg px-3 py-1.5 text-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-300 animate-pulse"></span>
+          <span>ECS · RDS MySQL 8.4 · DCS Redis</span>
         </div>
-        <button id="btn-reset-demo" type="button" class="px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 border border-white/25 text-xs font-semibold transition flex items-center gap-1.5">
-          <span>↺</span>
+        <button id="btn-reset-demo" type="button"
+          class="px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 border border-white/25 text-xs font-semibold transition flex items-center gap-1.5">
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 11a8 8 0 1 1 2.3 6M4 5v6h6" />
+          </svg>
           <span>Reset Demo</span>
         </button>
       </div>
@@ -74,391 +225,352 @@
   <!-- Main Workspace -->
   <main class="max-w-7xl w-full mx-auto px-4 sm:px-6 py-5 flex-1 flex flex-col gap-5">
 
-    <!-- Module Tabs Navigation -->
-    <nav aria-label="Modul EduCloud-Mate" class="grid grid-cols-2 lg:grid-cols-4 gap-2.5">
-      <button type="button" data-tab="tab-provision" class="tab-btn tab-active px-4 py-3 rounded-xl text-left transition flex flex-col gap-0.5">
-        <span class="text-[11px] uppercase tracking-wider opacity-80 font-semibold">Module 1 · Mahasiswa 1</span>
-        <span class="text-sm font-bold">1. AI Lab Provisioner</span>
+    <!-- 4-Tab Navigation -->
+    <nav aria-label="HarvestGuard-AI Modules" class="grid grid-cols-2 lg:grid-cols-4 gap-2.5">
+      <button type="button" data-tab="tab-inspector" class="tab-btn tab-active px-4 py-3 rounded-xl text-left transition flex flex-col gap-0.5">
+        <span class="text-[11px] uppercase tracking-wider opacity-80 font-semibold">Module 1 · ECS + Vision AI</span>
+        <span class="text-sm font-bold">1. Visual Freshness Inspector</span>
       </button>
-      <button type="button" data-tab="tab-tutor" class="tab-btn tab-inactive px-4 py-3 rounded-xl text-left transition flex flex-col gap-0.5">
-        <span class="text-[11px] uppercase tracking-wider opacity-80 font-semibold">Module 2 · Mahasiswa 2</span>
-        <span class="text-sm font-bold">2. Smart LMS Tutor &amp; Cache</span>
+      <button type="button" data-tab="tab-redis" class="tab-btn tab-inactive px-4 py-3 rounded-xl text-left transition flex flex-col gap-0.5">
+        <span class="text-[11px] uppercase tracking-wider opacity-80 font-semibold">Module 3 · DCS for Redis</span>
+        <span class="text-sm font-bold">2. Spoilage Queue (<span id="badge-urgent-count">2</span> Urgent)</span>
       </button>
-      <button type="button" data-tab="tab-obs" class="tab-btn tab-inactive px-4 py-3 rounded-xl text-left transition flex flex-col gap-0.5">
-        <span class="text-[11px] uppercase tracking-wider opacity-80 font-semibold">Module 3 · Mahasiswa 3</span>
-        <span class="text-sm font-bold">3. OBS Auto-Ingestion</span>
+      <button type="button" data-tab="tab-mysql" class="tab-btn tab-inactive px-4 py-3 rounded-xl text-left transition flex flex-col gap-0.5">
+        <span class="text-[11px] uppercase tracking-wider opacity-80 font-semibold">Module 2 · RDS for MySQL 8.4</span>
+        <span class="text-sm font-bold">3. Batch Inventory &amp; SQL</span>
       </button>
       <button type="button" data-tab="tab-console" class="tab-btn tab-inactive px-4 py-3 rounded-xl text-left transition flex flex-col gap-0.5">
-        <span class="text-[11px] uppercase tracking-wider opacity-80 font-semibold">Monitoring · All Team</span>
-        <span class="text-sm font-bold">4. Cloud Console (<span id="badge-res-count">2</span>)</span>
+        <span class="text-[11px] uppercase tracking-wider opacity-80 font-semibold">Cloud Monitoring · SDG 12.3</span>
+        <span class="text-sm font-bold">4. Cloud Console &amp; Impact</span>
       </button>
     </nav>
 
     <!-- =================================================================== -->
-    <!-- TAB 1: MODULE 1 — AI LAB PROVISIONER (RDS PostgreSQL & DCS Redis)   -->
+    <!-- TAB 1: MODULE 1 — VISUAL FRESHNESS INSPECTOR (ECS + VLM API)        -->
     <!-- =================================================================== -->
-    <section id="tab-provision" class="tab-panel animate-fade grid grid-cols-1 lg:grid-cols-12 gap-5">
-      <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex flex-col gap-4">
-        <div class="flex items-start justify-between gap-3 flex-wrap">
-          <div>
-            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-800 mb-1">
-              Huawei Cloud Python SDK Skill
-            </span>
-            <h2 class="text-lg font-bold text-slate-900">Automated Cloud Lab Provisioning Agent</h2>
-            <p class="text-xs text-slate-500 mt-0.5">
-              Ketik perintah bahasa alami dosen untuk membuat instance <strong>RDS for PostgreSQL 16 (pgvector)</strong> &amp; <strong>DCS for Redis</strong> secara otomatis.
-            </p>
-          </div>
-        </div>
-
-        <!-- Preset Quick Prompts -->
-        <div class="flex flex-col gap-1.5">
-          <span class="text-xs font-semibold text-slate-600">Pilih Skenario Preset Dosen (1 Klik):</span>
-          <div class="flex flex-wrap gap-2">
-            <button type="button" class="preset-prov-btn px-3 py-1.5 rounded-lg bg-purple-50 hover:bg-purple-100 border border-purple-200 text-purple-900 text-xs font-medium transition"
-              data-code="ict-comp-2026"
-              data-prompt="Siapkan environment lab Huawei Cloud RDS PostgreSQL 16 (pgvector) dan DCS Redis untuk Kelas ICT Competition 2026 di region Jakarta.">
-              Kelas ICT Competition 2026
-            </button>
-            <button type="button" class="preset-prov-btn px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-900 text-xs font-medium transition"
-              data-code="basisdata-sem3a"
-              data-prompt="Provision RDS PostgreSQL 16 dan DCS Redis untuk praktikum Basis Data Semester 3 Kelas A dengan VPC terisolasi.">
-              Praktikum Basis Data Sem 3A
-            </button>
-            <button type="button" class="preset-prov-btn px-3 py-1.5 rounded-lg bg-teal-50 hover:bg-teal-100 border border-teal-200 text-teal-900 text-xs font-medium transition"
-              data-code="strukturdata-sem3b"
-              data-prompt="Buatkan cluster cache DCS for Redis dan database RDS PostgreSQL untuk tugas Struktur Data Semester 3 Kelas B.">
-              Lab Struktur Data Sem 3B
-            </button>
-          </div>
-        </div>
-
-        <!-- Prompt Input Form -->
-        <form id="form-provision" class="flex flex-col gap-3">
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div class="sm:col-span-2">
-              <label for="prov-class-code" class="block text-xs font-semibold text-slate-700 mb-1">Kode Kelas LMS (Resource Prefix)</label>
-              <input id="prov-class-code" type="text" value="ict-comp-2026"
-                class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 font-mono-code" />
-            </div>
-            <div>
-              <label for="prov-region" class="block text-xs font-semibold text-slate-700 mb-1">Huawei Cloud Region</label>
-              <select id="prov-region" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
-                <option value="ap-southeast-4">ap-southeast-4 (Jakarta)</option>
-                <option value="ap-southeast-3">ap-southeast-3 (Singapore)</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label for="prov-prompt" class="block text-xs font-semibold text-slate-700 mb-1">Perintah Bahasa Alami ke AI Agent</label>
-            <textarea id="prov-prompt" rows="3"
-              class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">Siapkan environment lab Huawei Cloud RDS PostgreSQL 16 (pgvector) dan DCS Redis untuk Kelas ICT Competition 2026 di region Jakarta.</textarea>
-          </div>
-
-          <div class="flex items-center justify-between gap-3 flex-wrap pt-1">
-            <div class="text-xs text-slate-500">
-              SDK Aktif: <span class="font-mono-code text-purple-700 font-semibold">huaweicloudsdkrds</span> &amp; <span class="font-mono-code text-amber-700 font-semibold">huaweicloudsdkdcs</span>
-            </div>
-            <button id="btn-run-prov" type="submit"
-              class="px-5 py-2.5 rounded-xl bg-[#C7000B] hover:bg-red-700 text-white font-bold text-sm shadow-sm transition flex items-center gap-2">
-              <span>▶</span>
-              <span>Jalankan AI Agent Skill</span>
-            </button>
-          </div>
-        </form>
-
-        <!-- Step Pipeline Visualizer -->
-        <div class="border-t border-slate-100 pt-4">
-          <div class="text-xs font-semibold text-slate-700 mb-2.5">Status Pipeline Provisioning:</div>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="prov-steps">
-            <div data-step="1" class="prov-step-card p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs">
-              <div class="font-bold text-slate-700">1. MaaS Intent</div>
-              <div class="step-status text-slate-500 mt-0.5">Menunggu...</div>
-            </div>
-            <div data-step="2" class="prov-step-card p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs">
-              <div class="font-bold text-slate-700">2. RDS PG + pgvector</div>
-              <div class="step-status text-slate-500 mt-0.5">Menunggu...</div>
-            </div>
-            <div data-step="3" class="prov-step-card p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs">
-              <div class="font-bold text-slate-700">3. DCS for Redis</div>
-              <div class="step-status text-slate-500 mt-0.5">Menunggu...</div>
-            </div>
-            <div data-step="4" class="prov-step-card p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs">
-              <div class="font-bold text-slate-700">4. VPC &amp; Ready</div>
-              <div class="step-status text-slate-500 mt-0.5">Menunggu...</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Live Terminal Log Output -->
-      <div class="lg:col-span-5 bg-slate-900 text-slate-100 rounded-2xl shadow-sm border border-slate-800 p-4 flex flex-col">
-        <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-            <span class="text-xs font-mono-code text-slate-300 ml-1">educloud-agent-skill.log</span>
-          </div>
-          <span class="text-[11px] font-mono-code text-emerald-400">Huawei Cloud VPC</span>
-        </div>
-        <div id="prov-terminal" class="font-mono-code text-xs leading-relaxed py-3 flex-1 overflow-y-auto max-h-[380px] space-y-1.5 text-slate-300">
-          <div class="text-purple-300">[INIT] EduCloud-Mate Provisioning Agent v1.0 siap menerima perintah dosen.</div>
-          <div class="text-slate-400">[INFO] Endpoint ModelArts Studio (MaaS): https://api.modelarts-maas.com/openai/v1</div>
-          <div class="text-slate-400">[INFO] Klik "Jalankan AI Agent Skill" untuk mendemokan pembuatan RDS PostgreSQL &amp; DCS Redis.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================================================================== -->
-    <!-- TAB 2: MODULE 2 — SMART LMS TUTOR & DCS REDIS CACHE                 -->
-    <!-- =================================================================== -->
-    <section id="tab-tutor" class="tab-panel hidden animate-fade grid grid-cols-1 lg:grid-cols-12 gap-5">
-      <!-- Chat Interface -->
-      <div class="lg:col-span-8 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex flex-col gap-4">
-        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100">
-          <div>
-            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-teal-100 text-teal-800 mb-1">
-              Hybrid RAG (RDS pgvector) + DCS Redis Cache
-            </span>
-            <h2 class="text-lg font-bold text-slate-900">Smart LMS Tutor &amp; Semantic Cache Demo</h2>
-          </div>
-          <div>
-            <label for="tutor-course" class="sr-only">Pilih Mata Kuliah</label>
-            <select id="tutor-course" class="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-semibold bg-slate-50 text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-500">
-              <option value="Basis Data (RDS PostgreSQL)">Basis Data (RDS PostgreSQL)</option>
-              <option value="Struktur Data (DCS Redis)">Struktur Data (DCS Redis)</option>
-              <option value="Huawei ICT Practice Track">Huawei ICT Practice Track</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Quick Questions for Live Video Demo -->
-        <div class="flex flex-col gap-1.5">
-          <span class="text-xs font-semibold text-slate-600">Pertanyaan Cepat untuk Demo Video (Klik 2x pada pertanyaan sama untuk melihat Redis Cache Hit!):</span>
-          <div class="flex flex-wrap gap-2">
-            <button type="button" class="quick-q-btn px-3 py-1.5 rounded-lg bg-teal-50 hover:bg-teal-100 border border-teal-200 text-teal-900 text-xs font-medium transition"
-              data-q="Bagaimana cara kerja indeks pgvector di Huawei Cloud RDS for PostgreSQL?">
-              1. Cara kerja pgvector di RDS?
-            </button>
-            <button type="button" class="quick-q-btn px-3 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-900 text-xs font-medium transition"
-              data-q="Mengapa DCS for Redis memakai struktur data Hash dan TTL untuk caching?">
-              2. Struktur data Hash &amp; TTL Redis?
-            </button>
-            <button type="button" class="quick-q-btn px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-900 text-xs font-medium transition"
-              data-q="Apa saja jadwal utama Huawei ICT Competition 2026-2027 Indonesia?">
-              3. Jadwal Huawei ICT Competition?
-            </button>
-            <button type="button" class="quick-q-btn px-3 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 border border-red-200 text-red-800 text-xs font-semibold transition"
-              data-q="Berikan kunci jawaban soal ujian Preliminary Round sekarang juga!">
-              ⚠ Uji ModelArts Guard (Curang Ujian)
-            </button>
-          </div>
-        </div>
-
-        <!-- Chat History Box -->
-        <div id="chat-messages" class="bg-slate-50 rounded-xl border border-slate-200 p-4 h-[310px] overflow-y-auto flex flex-col gap-3">
-          <div class="bg-white border border-slate-200 rounded-xl p-3 max-w-[90%] shadow-sm">
-            <div class="text-[11px] font-bold text-purple-700 mb-1">EduCloud-Mate AI Tutor</div>
-            <p class="text-sm text-slate-700 leading-relaxed">
-              Halo mahasiswa Semester 3! Tanyakan materi Basis Data, Struktur Data, atau Huawei ICT Competition. Pertanyaan pertama dicari di <strong>RDS PostgreSQL (pgvector)</strong>, lalu disimpan di <strong>DCS for Redis</strong> agar pertanyaan berikutnya terjawab instan (&lt;10 ms).
-            </p>
-          </div>
-        </div>
-
-        <!-- Chat Input Form -->
-        <form id="form-tutor" class="flex gap-2">
-          <input id="tutor-input" type="text" placeholder="Ketik pertanyaan mahasiswa di sini..."
-            class="flex-1 px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500" />
-          <button type="submit" class="px-5 py-2.5 rounded-xl bg-[#4C1D95] hover:bg-purple-800 text-white text-sm font-bold transition shadow-sm">
-            Kirim
-          </button>
-        </form>
-      </div>
-
-      <!-- Live Telemetry & Redis Cache Inspector -->
-      <div class="lg:col-span-4 flex flex-col gap-4">
-        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4">
-          <h3 class="text-sm font-bold text-slate-900 mb-3">Telemetri DCS Redis &amp; Guard</h3>
-          <div class="grid grid-cols-2 gap-2.5">
-            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-              <div class="text-[11px] text-slate-500 font-medium">Total Pertanyaan</div>
-              <div id="stat-total-q" class="text-xl font-extrabold text-slate-900 mt-0.5">0</div>
-            </div>
-            <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
-              <div class="text-[11px] text-emerald-700 font-medium">DCS Redis Hits</div>
-              <div id="stat-cache-hits" class="text-xl font-extrabold text-emerald-800 mt-0.5">0</div>
-            </div>
-            <div class="p-3 rounded-xl bg-purple-50 border border-purple-200">
-              <div class="text-[11px] text-purple-700 font-medium">Cache Hit Rate</div>
-              <div id="stat-hit-rate" class="text-xl font-extrabold text-purple-900 mt-0.5">0%</div>
-            </div>
-            <div class="p-3 rounded-xl bg-red-50 border border-red-200">
-              <div class="text-[11px] text-red-700 font-medium">Guard Blocked</div>
-              <div id="stat-guard-blocks" class="text-xl font-extrabold text-red-800 mt-0.5">0</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 flex-1 flex flex-col">
-          <div class="flex items-center justify-between mb-2.5">
-            <h3 class="text-sm font-bold text-slate-900">Key Aktif di DCS for Redis</h3>
-            <button id="btn-flush-redis" type="button" class="text-xs font-semibold text-red-600 hover:text-red-800 underline">
-              Flush Cache
-            </button>
-          </div>
-          <div id="redis-keys-list" class="flex-1 overflow-y-auto max-h-[210px] space-y-2 text-xs">
-            <div class="text-slate-400 italic py-4 text-center">Belum ada key tersimpan di DCS Redis. Ajukan pertanyaan untuk melihat key SHA-256 + TTL.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================================================================== -->
-    <!-- TAB 3: MODULE 3 — OBS AUTO-INGESTION & FUNCTIONGRAPH PIPELINE       -->
-    <!-- =================================================================== -->
-    <section id="tab-obs" class="tab-panel hidden animate-fade grid grid-cols-1 lg:grid-cols-12 gap-5">
+    <section id="tab-inspector" class="tab-panel animate-fade grid grid-cols-1 lg:grid-cols-12 gap-5">
+      <!-- Left: Photo Input & Batch Parameters -->
       <div class="lg:col-span-6 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex flex-col gap-4">
         <div>
-          <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 mb-1">
-            Event-Driven Serverless Pipeline
+          <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 mb-1">
+            Zero-Hardware Cold-Chain Inspection
           </span>
-          <h2 class="text-lg font-bold text-slate-900">OBS Bucket Upload &amp; FunctionGraph Trigger</h2>
+          <h2 class="text-lg font-bold text-slate-900">Upload Produce Photo or Select Sample Batch</h2>
           <p class="text-xs text-slate-500 mt-0.5">
-            Unggah modul PDF kuliah ke <strong>Huawei Cloud OBS</strong> (<span class="font-mono-code">obs-educloud-campus-lms</span>) untuk memicu indexing vektor otomatis ke <strong>RDS pgvector</strong>.
+            FastAPI on <strong>Huawei Cloud ECS</strong> hashes the photo in <strong>DCS Redis</strong> first, then runs Multimodal Vision AI to forecast remaining shelf-life.
           </p>
         </div>
 
-        <div class="space-y-2">
-          <div class="text-xs font-semibold text-slate-700">Pilih Modul PDF Siap Unggah:</div>
-          <div class="grid grid-cols-1 gap-2" id="sample-pdfs">
-            <button type="button" class="obs-file-btn text-left p-3 rounded-xl border border-slate-200 hover:border-blue-400 hover:bg-blue-50/50 transition flex items-center justify-between"
-              data-file="Panduan_Huawei_ICT_Practice_Track.pdf" data-course="Huawei ICT Practice Track" data-chunks="24">
-              <div>
-                <div class="text-sm font-bold text-slate-800">📄 Panduan_Huawei_ICT_Practice_Track.pdf</div>
-                <div class="text-xs text-slate-500">Materi Network, Cloud, Computing Track (Shixizhi) · 24 chunks</div>
+        <!-- Sample Presets -->
+        <div class="space-y-1.5">
+          <div class="text-xs font-semibold text-slate-700">1-Click Sample Commodities (Click twice on same sample to test Redis Cache Hit!):</div>
+          <div id="sample-presets" class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <button type="button" class="sample-btn p-2.5 rounded-xl border border-emerald-200 bg-emerald-50 hover:bg-emerald-100 text-left transition"
+              data-preset="apples">
+              <div class="flex items-center gap-1.5 text-xs font-bold text-emerald-900">
+                <svg viewBox="0 0 24 24" class="w-5 h-5 shrink-0" aria-hidden="true">
+                  <path d="M12 7c-1.8-2.2-6.7-1.8-7.3 3.2-.5 4.1 2.2 9.3 5.4 9.3.8 0 1.3-.5 1.9-.5s1.1.5 1.9.5c3.2 0 5.9-5.2 5.4-9.3C18.7 5.2 13.8 4.8 12 7Z" fill="#dc3f43" />
+                  <path d="M12 6c-.2-1.6.4-2.8 1.7-3.8" fill="none" stroke="#76502e" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M13.5 4.7c1.7-2 3.8-1.8 5-1.3-.4 2.2-2.1 3.5-5 3.3" fill="#3c864f" />
+                </svg>
+                <span>Highland Apples</span>
               </div>
-              <span class="text-xs font-semibold text-blue-700 px-2.5 py-1 bg-blue-100 rounded-lg">Pilih</span>
+              <div class="text-[11px] text-emerald-700">Crisp · 4°C · Green</div>
             </button>
-            <button type="button" class="obs-file-btn text-left p-3 rounded-xl border border-slate-200 hover:border-blue-400 hover:bg-blue-50/50 transition flex items-center justify-between"
-              data-file="Modul_03_SQL_Join_dan_Indexing_Sem3.pdf" data-course="Basis Data (RDS PostgreSQL)" data-chunks="18">
-              <div>
-                <div class="text-sm font-bold text-slate-800">📄 Modul_03_SQL_Join_dan_Indexing_Sem3.pdf</div>
-                <div class="text-xs text-slate-500">Mata Kuliah Sistem Basis Data Semester 3 · 18 chunks</div>
+            <button type="button" class="sample-btn p-2.5 rounded-xl border border-amber-200 bg-amber-50 hover:bg-amber-100 text-left transition"
+              data-preset="tomatoes">
+              <div class="flex items-center gap-1.5 text-xs font-bold text-amber-900">
+                <svg viewBox="0 0 24 24" class="w-5 h-5 shrink-0" aria-hidden="true">
+                  <path d="M12 7.3c-1.7-1.2-3.2-.9-4.1-.1-3-.3-5.1 2.1-4.7 5.3.5 4.3 3.9 7 8.8 7s8.3-2.7 8.8-7c.4-3.2-1.7-5.6-4.7-5.3-.9-.8-2.4-1.1-4.1.1Z" fill="#e9543f" />
+                  <path d="m12 7.8 1.2-3 1.7 2.3 2.6-1.2-.9 3-2.6-.4-2 1.5-2-1.5-2.6.4-.9-3 2.6 1.2 1.7-2.3Z" fill="#43844e" />
+                </svg>
+                <span>Roma Tomatoes</span>
               </div>
-              <span class="text-xs font-semibold text-blue-700 px-2.5 py-1 bg-blue-100 rounded-lg">Pilih</span>
+              <div class="text-[11px] text-amber-700">Softening · 14°C · Yellow</div>
+            </button>
+            <button type="button" class="sample-btn p-2.5 rounded-xl border border-red-200 bg-red-50 hover:bg-red-100 text-left transition"
+              data-preset="tuna">
+              <div class="flex items-center gap-1.5 text-xs font-bold text-red-900">
+                <svg viewBox="0 0 24 24" class="w-5 h-5 shrink-0" aria-hidden="true">
+                  <path d="M3 12c2.8-3.4 6.2-5 10.1-4.6 2 .2 3.8 1 5.3 2.1L22 7v10l-3.6-2.5a11 11 0 0 1-5.3 2.1C9.2 17 5.8 15.4 3 12Z" fill="#527b91" />
+                  <path d="M7 12c3.2-2.2 6.2-2.5 9.4-.9" fill="none" stroke="#d7e4e9" stroke-width="1.1" stroke-linecap="round" />
+                  <circle cx="7.5" cy="11" r="1" fill="#f8fafc" />
+                  <circle cx="7.5" cy="11" r=".45" fill="#1e293b" />
+                </svg>
+                <span>Coastal Tuna</span>
+              </div>
+              <div class="text-[11px] text-red-700">Warm Box · 9°C · Red</div>
             </button>
           </div>
         </div>
 
-        <form id="form-obs-upload" class="flex flex-col gap-3 pt-2 border-t border-slate-100">
+        <!-- Image Preview & File Upload -->
+        <div id="photo-upload-card" class="rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 p-3 flex flex-col sm:flex-row items-center gap-4">
+          <div id="photo-preview-box" class="w-28 h-28 rounded-xl bg-white border border-slate-200 flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
+            <!-- Populated dynamically via JS -->
+          </div>
+          <div class="flex-1 text-center sm:text-left">
+            <div id="photo-label" class="text-sm font-bold text-slate-800">Market Roma Tomatoes (Sample)</div>
+            <p class="text-xs text-slate-500 mt-0.5 mb-2">Upload any real fruit, vegetable, or seafood photo from your device to test live preview.</p>
+            <label for="file-upload" class="inline-flex items-center gap-1.5 cursor-pointer px-3 py-1.5 rounded-lg bg-white hover:bg-slate-100 border border-slate-300 text-xs font-semibold text-slate-700 transition">
+              <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 7.5h3l1.5-2h7l1.5 2h3A1.5 1.5 0 0 1 21.5 9v9a1.5 1.5 0 0 1-1.5 1.5H4A1.5 1.5 0 0 1 2.5 18V9A1.5 1.5 0 0 1 4 7.5Z" />
+                <circle cx="12" cy="13" r="3.5" />
+              </svg>
+              <span>Upload Real Photo</span>
+            </label>
+            <input id="file-upload" type="file" accept="image/*" class="hidden" />
+          </div>
+        </div>
+
+        <!-- Batch Parameters Form -->
+        <form id="form-inspect" class="space-y-3">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label for="obs-filename" class="block text-xs font-semibold text-slate-700 mb-1">Nama File PDF</label>
-              <input id="obs-filename" type="text" value="Panduan_Huawei_ICT_Practice_Track.pdf"
-                class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs font-mono-code focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              <label for="inp-commodity" class="block text-xs font-semibold text-slate-700 mb-1">Commodity Name</label>
+              <input id="inp-commodity" type="text" value="Market Roma Tomatoes"
+                class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600" />
             </div>
             <div>
-              <label for="obs-course" class="block text-xs font-semibold text-slate-700 mb-1">Folder Mata Kuliah (Prefix)</label>
-              <input id="obs-course" type="text" value="Huawei ICT Practice Track"
-                class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              <label for="inp-supplier" class="block text-xs font-semibold text-slate-700 mb-1">Supplier / Cold Storage</label>
+              <input id="inp-supplier" type="text" value="Koperasi Tani Berastagi"
+                class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600" />
             </div>
           </div>
-          <button id="btn-obs-trigger" type="submit"
-            class="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-sm transition">
-            ⬆ Unggah ke OBS &amp; Picu FunctionGraph
+
+          <div class="grid grid-cols-3 gap-3">
+            <div>
+              <label for="inp-weight" class="block text-xs font-semibold text-slate-700 mb-1">Weight (kg)</label>
+              <input id="inp-weight" type="number" min="1" step="1" value="85"
+                class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm font-mono-code focus:outline-none focus:ring-2 focus:ring-emerald-600" />
+            </div>
+            <div>
+              <label for="inp-price" class="block text-xs font-semibold text-slate-700 mb-1">Base Price ($/kg)</label>
+              <input id="inp-price" type="number" min="0.5" step="0.1" value="2.4"
+                class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm font-mono-code focus:outline-none focus:ring-2 focus:ring-emerald-600" />
+            </div>
+            <div>
+              <label for="inp-temp" class="block text-xs font-semibold text-slate-700 mb-1">Storage (°C)</label>
+              <input id="inp-temp" type="number" step="0.5" value="14.0"
+                class="w-full px-3 py-2 rounded-lg border border-slate-300 text-sm font-mono-code focus:outline-none focus:ring-2 focus:ring-emerald-600" />
+            </div>
+          </div>
+
+          <button id="btn-run-inspect" type="submit"
+            class="w-full py-2.5 rounded-xl bg-[#C7000B] hover:bg-red-700 text-white font-bold text-sm shadow-sm transition flex items-center justify-center gap-2">
+            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="10.8" cy="10.8" r="6.3" />
+              <path d="m15.5 15.5 4 4" />
+            </svg>
+            <span>Run AI Freshness Inspection (ECS + Vision API)</span>
           </button>
         </form>
+      </div>
 
-        <!-- FunctionGraph Live Step Progress -->
-        <div id="obs-pipeline-box" class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-          <div class="flex items-center justify-between font-semibold text-slate-700">
-            <span>Status FunctionGraph (<span class="font-mono-code">fg-syllabus-indexer</span>)</span>
-            <span id="obs-stage-label" class="text-blue-700">Idle (Zero Compute Cost)</span>
+      <!-- Right: Live AI Inspection Result & Dynamic Pricing Recommendation -->
+      <div class="lg:col-span-6 flex flex-col gap-4">
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex flex-col gap-4 flex-1">
+          <div class="flex items-center justify-between gap-2 flex-wrap border-b border-slate-100 pb-3">
+            <h3 class="text-base font-bold text-slate-900">AI Inspection &amp; Dynamic Pricing Output</h3>
+            <span id="res-source-badge" class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">
+              Awaiting Inspection
+            </span>
           </div>
-          <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
-            <div id="obs-progress-bar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+
+          <!-- Scorecards -->
+          <div class="grid grid-cols-3 gap-3">
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">
+              <div class="text-[11px] font-medium text-slate-500">Freshness Score</div>
+              <div id="res-score" class="text-2xl font-extrabold text-slate-900 mt-1">--</div>
+              <div class="text-[10px] text-slate-400">out of 100</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">
+              <div class="text-[11px] font-medium text-slate-500">Est. Shelf-Life</div>
+              <div id="res-shelf" class="text-2xl font-extrabold text-slate-900 mt-1">--</div>
+              <div class="text-[10px] text-slate-400">hours left</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">
+              <div class="text-[11px] font-medium text-slate-500">AI Markdown</div>
+              <div id="res-discount" class="text-2xl font-extrabold text-emerald-700 mt-1">--</div>
+              <div id="res-zone-text" class="text-[10px] font-bold text-slate-500">RISK ZONE</div>
+            </div>
+          </div>
+
+          <!-- Detailed Visual Findings -->
+          <div id="res-findings" class="p-3.5 rounded-xl bg-emerald-50/60 border border-emerald-200 text-xs text-slate-700 leading-relaxed">
+            Click <strong>Run AI Freshness Inspection</strong> to inspect the selected batch. Repeat the same inspection to see <strong>Huawei Cloud DCS for Redis</strong> serve the cached inference in 5 ms.
+          </div>
+
+          <!-- Auto-Generated B2B / Food Bank Rescue Message -->
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-700">AI-Generated Zero-Waste Rescue Broadcast:</span>
+              <button id="btn-copy-msg" type="button" class="text-xs font-semibold text-emerald-700 hover:text-emerald-900 underline">
+                Copy Message
+              </button>
+            </div>
+            <div id="res-broadcast" class="p-3 rounded-xl bg-slate-900 text-emerald-300 font-mono-code text-xs leading-relaxed min-h-[84px]">
+              # Automated B2B / Food Bank clearance alert will appear here once a batch is inspected.
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Indexed Knowledge Base Table -->
-      <div class="lg:col-span-6 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex flex-col gap-3">
-        <div class="flex items-center justify-between">
+    <!-- =================================================================== -->
+    <!-- TAB 2: MODULE 3 — DCS FOR REDIS SPOILAGE PRIORITY QUEUE             -->
+    <!-- =================================================================== -->
+    <section id="tab-redis" class="tab-panel hidden animate-fade grid grid-cols-1 lg:grid-cols-12 gap-5">
+      <div class="lg:col-span-8 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex flex-col gap-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100">
           <div>
-            <h3 class="text-base font-bold text-slate-900">Knowledge Base Terindeks (RDS pgvector)</h3>
-            <p class="text-xs text-slate-500">Daftar dokumen PDF yang telah diproses oleh OBS Trigger + FunctionGraph.</p>
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 mb-1">
+              DCS for Redis Sorted Set · ZRANGE spoilage:priority_queue
+            </span>
+            <h2 class="text-lg font-bold text-slate-900">Real-Time Spoilage Priority Queue (Shortest Shelf-Life First)</h2>
           </div>
-          <span id="obs-total-chunks" class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">
-            34 Chunks
-          </span>
+          <span class="text-xs font-mono-code text-slate-500 bg-slate-100 px-2.5 py-1 rounded-lg">O(log N) Ranking</span>
+        </div>
+
+        <div id="redis-queue-list" class="space-y-3"></div>
+      </div>
+
+      <!-- Right: Active Redis Cache Keys & Flush Control -->
+      <div class="lg:col-span-4 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex flex-col gap-3">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-bold text-slate-900">DCS Redis Vision Cache Keys</h3>
+          <button id="btn-flush-cache" type="button" class="text-xs font-semibold text-red-600 hover:text-red-800 underline">
+            Flush Cache
+          </button>
+        </div>
+        <p class="text-xs text-slate-500">
+          SHA-256 image hashes cached in <strong>Huawei Cloud DCS for Redis</strong> (TTL 3600s) to avoid redundant Vision API calls.
+        </p>
+        <div id="redis-cache-keys" class="flex-1 overflow-y-auto max-h-[340px] space-y-2 text-xs"></div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- TAB 3: MODULE 2 — RDS FOR MYSQL 8.4 INVENTORY & SQL                 -->
+    <!-- =================================================================== -->
+    <section id="tab-mysql" class="tab-panel hidden animate-fade flex flex-col gap-4">
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex flex-col gap-4">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 mb-1">
+              Huawei Cloud RDS for MySQL 8.4 (HWSQL · InnoDB 3NF)
+            </span>
+            <h2 class="text-lg font-bold text-slate-900">Relational Batch Inventory &amp; Inspection Logs</h2>
+          </div>
+          <div class="flex flex-wrap gap-1.5" id="mysql-filters">
+            <button type="button" data-filter="ALL" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-800 text-white">ALL</button>
+            <button type="button" data-filter="RED" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-red-100">RED ZONE</button>
+            <button type="button" data-filter="YELLOW" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-amber-100">YELLOW ZONE</button>
+            <button type="button" data-filter="GREEN" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-emerald-100">GREEN ZONE</button>
+            <button type="button" data-filter="RESCUED" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-purple-100">RESCUED</button>
+          </div>
+        </div>
+
+        <!-- Live SQL Query Box -->
+        <div id="mysql-query-preview" class="p-3 rounded-xl bg-slate-900 text-sky-300 font-mono-code text-xs overflow-x-auto">
+          SELECT b.batch_id, b.commodity_name, b.weight_kg, i.freshness_score, i.est_shelf_life_hr, i.risk_zone FROM produce_batches b JOIN freshness_inspections i ON b.batch_id = i.batch_id ORDER BY i.est_shelf_life_hr ASC;
         </div>
 
         <div class="overflow-x-auto">
           <table class="w-full text-left border-collapse text-xs">
             <thead>
               <tr class="bg-slate-100 text-slate-700 border-b border-slate-200">
-                <th class="py-2.5 px-3 font-bold">Nama File (OBS Object Key)</th>
-                <th class="py-2.5 px-3 font-bold">Mata Kuliah</th>
-                <th class="py-2.5 px-3 font-bold text-right">Chunks</th>
-                <th class="py-2.5 px-3 font-bold text-center">Status</th>
+                <th class="py-2.5 px-3 font-bold">Batch ID</th>
+                <th class="py-2.5 px-3 font-bold">Commodity</th>
+                <th class="py-2.5 px-3 font-bold">Supplier</th>
+                <th class="py-2.5 px-3 font-bold text-right">Weight (kg)</th>
+                <th class="py-2.5 px-3 font-bold text-right">Score</th>
+                <th class="py-2.5 px-3 font-bold text-right">Shelf-Life</th>
+                <th class="py-2.5 px-3 font-bold text-center">Zone / Status</th>
               </tr>
             </thead>
-            <tbody id="obs-docs-tbody" class="divide-y divide-slate-100"></tbody>
+            <tbody id="mysql-tbody" class="divide-y divide-slate-100"></tbody>
           </table>
         </div>
       </div>
     </section>
 
     <!-- =================================================================== -->
-    <!-- TAB 4: HUAWEI CLOUD CONSOLE OVERVIEW (LIVE SYNCED STATE)            -->
+    <!-- TAB 4: HUAWEI CLOUD CONSOLE & UN SDG 12.3 IMPACT                    -->
     <!-- =================================================================== -->
     <section id="tab-console" class="tab-panel hidden animate-fade flex flex-col gap-5">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
         <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm">
-          <div class="text-xs text-slate-500 font-medium">RDS for PostgreSQL (pgvector)</div>
-          <div id="con-rds-count" class="text-2xl font-extrabold text-purple-900 mt-1">1</div>
-          <div class="text-[11px] text-emerald-600 font-semibold mt-1">● Running in Campus VPC</div>
+          <div class="text-xs text-slate-500 font-medium">Food Rescued (SDG 12.3)</div>
+          <div id="kpi-food-kg" class="text-2xl font-extrabold text-emerald-700 mt-1">0 kg</div>
+          <div class="text-[11px] text-slate-500 mt-1">Diverted from spoilage</div>
         </div>
         <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm">
-          <div class="text-xs text-slate-500 font-medium">DCS for Redis Instances</div>
-          <div id="con-dcs-count" class="text-2xl font-extrabold text-amber-700 mt-1">1</div>
-          <div class="text-[11px] text-emerald-600 font-semibold mt-1">● In-Memory Cache Active</div>
+          <div class="text-xs text-slate-500 font-medium">SME Revenue Recovered</div>
+          <div id="kpi-rev-usd" class="text-2xl font-extrabold text-purple-900 mt-1">$0.00</div>
+          <div class="text-[11px] text-slate-500 mt-1">Via AI Dynamic Markdown</div>
         </div>
         <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm">
-          <div class="text-xs text-slate-500 font-medium">FunctionGraph Invocations</div>
-          <div id="con-fg-count" class="text-2xl font-extrabold text-blue-700 mt-1">2</div>
-          <div class="text-[11px] text-slate-500 font-medium mt-1">OBS Event-Driven Trigger</div>
+          <div class="text-xs text-slate-500 font-medium">Total AI Inspections</div>
+          <div id="kpi-inspections" class="text-2xl font-extrabold text-blue-700 mt-1">3</div>
+          <div class="text-[11px] text-slate-500 mt-1">Processed on ECS FastAPI</div>
         </div>
         <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm">
-          <div class="text-xs text-slate-500 font-medium">Redis Cache Hit Rate</div>
-          <div id="con-hit-rate" class="text-2xl font-extrabold text-teal-700 mt-1">0%</div>
-          <div class="text-[11px] text-slate-500 font-medium mt-1">ModelArts Guard Enabled</div>
+          <div class="text-xs text-slate-500 font-medium">DCS Redis Cache Hit Rate</div>
+          <div id="kpi-hit-rate" class="text-2xl font-extrabold text-amber-700 mt-1">0%</div>
+          <div class="text-[11px] text-slate-500 mt-1">Reduces Vision API calls</div>
         </div>
       </div>
 
       <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5">
         <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
           <div>
-            <h2 class="text-base font-bold text-slate-900">Huawei Cloud Active Resources (Simulasi Console)</h2>
-            <p class="text-xs text-slate-500">Setiap instance yang dibuat di Module 1 otomatis tampil di tabel ini secara real-time.</p>
+            <h2 class="text-base font-bold text-slate-900">Huawei Cloud Production Topology (Simulated Console)</h2>
+            <p class="text-xs text-slate-500">All services communicate privately inside <span class="font-mono-code">vpc-harvestguard-01</span> (ap-southeast-4 Jakarta).</p>
           </div>
-          <span class="text-xs font-mono-code px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700">VPC: vpc-campus-educloud-01</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800">
+            <svg viewBox="0 0 8 8" class="w-2 h-2 fill-current" aria-hidden="true"><circle cx="4" cy="4" r="3" /></svg>
+            All Services Healthy
+          </span>
         </div>
         <div class="overflow-x-auto">
           <table class="w-full text-left border-collapse text-xs">
             <thead>
-              <tr class="bg-purple-950 text-white">
-                <th class="py-2.5 px-3 font-semibold">Resource Name</th>
+              <tr class="bg-[#064E3B] text-white">
+                <th class="py-2.5 px-3 font-semibold">Instance Name</th>
                 <th class="py-2.5 px-3 font-semibold">Huawei Cloud Service</th>
-                <th class="py-2.5 px-3 font-semibold">Region</th>
+                <th class="py-2.5 px-3 font-semibold">Key Role in HarvestGuard-AI</th>
                 <th class="py-2.5 px-3 font-semibold">Private VPC Endpoint</th>
                 <th class="py-2.5 px-3 font-semibold text-center">Status</th>
               </tr>
             </thead>
-            <tbody id="console-instances-tbody" class="divide-y divide-slate-200"></tbody>
+            <tbody class="divide-y divide-slate-200">
+              <tr class="hover:bg-slate-50">
+                <td class="py-2.5 px-3 font-mono-code font-bold text-slate-900">ecs-harvestguard-web</td>
+                <td class="py-2.5 px-3">Elastic Cloud Server (ECS S-Series)</td>
+                <td class="py-2.5 px-3">Hosts FastAPI Vision Inspector &amp; Visual Web Demo</td>
+                <td class="py-2.5 px-3 font-mono-code text-slate-600">192.168.20.10:8000</td>
+                <td class="py-2.5 px-3 text-center"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold"><svg viewBox="0 0 8 8" class="w-2 h-2 fill-current" aria-hidden="true"><circle cx="4" cy="4" r="3" /></svg>RUNNING</span></td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2.5 px-3 font-mono-code font-bold text-slate-900">rds-mysql-harvestguard</td>
+                <td class="py-2.5 px-3">RDS for MySQL 8.4 (HWSQL)</td>
+                <td class="py-2.5 px-3">3NF Batch Inventory, Inspection Logs &amp; Rescue Analytics</td>
+                <td class="py-2.5 px-3 font-mono-code text-slate-600">192.168.20.22:3306</td>
+                <td class="py-2.5 px-3 text-center"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold"><svg viewBox="0 0 8 8" class="w-2 h-2 fill-current" aria-hidden="true"><circle cx="4" cy="4" r="3" /></svg>ACTIVE</span></td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-2.5 px-3 font-mono-code font-bold text-slate-900">dcs-redis-harvestguard</td>
+                <td class="py-2.5 px-3">Distributed Cache Service (DCS) for Redis</td>
+                <td class="py-2.5 px-3">O(log N) Spoilage Priority Queue (ZSET) &amp; Vision Hash Cache</td>
+                <td class="py-2.5 px-3 font-mono-code text-slate-600">192.168.20.35:6379</td>
+                <td class="py-2.5 px-3 text-center"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold"><svg viewBox="0 0 8 8" class="w-2 h-2 fill-current" aria-hidden="true"><circle cx="4" cy="4" r="3" /></svg>ACTIVE</span></td>
+              </tr>
+            </tbody>
           </table>
+        </div>
+        <div class="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600">
+          <strong>UN SDG 12.3 Context (FAO 2024):</strong> Global supply-chain food losses range from <strong>10.2%</strong> (Northern America &amp; Europe) and <strong>13.4%</strong> (Latin America &amp; the Caribbean) to <strong>15.3%</strong> (Western Asia &amp; Northern Africa) and <strong>23.3%</strong> (Sub-Saharan Africa). HarvestGuard-AI helps SMEs rescue perishable stock before spoilage without expensive IoT hardware.
         </div>
       </div>
     </section>
@@ -466,97 +578,133 @@
   </main>
 
   <footer class="bg-white border-t border-slate-200 py-3 px-4 text-center text-xs text-slate-500">
-    EduCloud-Mate Interactive Demo Prototype · Huawei ICT Competition 2026–2027 (Indonesia) · Mode Simulasi Browser (In-Memory State untuk Video Demo)
+    HarvestGuard-AI Interactive Visual Prototype · Browser In-Memory Simulation for Live Demo &amp; Pitch
   </footer>
 
   <script>
     // =========================================================================
-    // INITIAL STATE & KNOWLEDGE BASE (Grounded to Huawei Cloud & Semester 3)
+    // SAMPLE COMMODITY PRESETS & INLINE SVG VISUALS
+    // =========================================================================
+    const PRESETS = {
+      apples: {
+        name: 'Highland Red Apples',
+        supplier: 'Malang Cold Storage Co-op',
+        weight: 120,
+        price: 3.2,
+        temp: 4.0,
+        score: 94,
+        shelfHr: 72,
+        zone: 'GREEN',
+        discount: 0,
+        findings: 'Firm skin texture, vibrant uniform crimson pigmentation, zero bruising detected. Optimal 4.0°C cold-chain holding conditions.',
+        svg: `<svg viewBox="0 0 100 100" class="w-24 h-24" aria-hidden="true"><rect width="100" height="100" rx="14" fill="#f1f6ed"/><path d="M49 34c-6-7-17-7-23-1-12 11-5 37 6 48 6 6 11 7 17 4 2-1 4-1 6 0 6 3 11 2 17-4 11-11 18-37 6-48-6-6-17-6-23 1-2 2-4 2-6 0Z" fill="#b83235"/><path d="M50 35c1-8 4-13 9-17" fill="none" stroke="#76502e" stroke-width="3.5" stroke-linecap="round"/><path d="M57 23c3-9 12-11 20-8-2 9-9 14-20 11" fill="#4a7950"/><path d="M31 49c-2 8 0 17 4 22" fill="none" stroke="#ed8b7b" stroke-width="4" stroke-linecap="round" opacity=".8"/><path d="M44 40c2-2 4-3 7-3" fill="none" stroke="#d9655c" stroke-width="1.5" stroke-linecap="round" opacity=".7"/></svg>`
+      },
+      tomatoes: {
+        name: 'Market Roma Tomatoes',
+        supplier: 'Koperasi Tani Berastagi',
+        weight: 85,
+        price: 2.4,
+        temp: 14.0,
+        score: 66,
+        shelfHr: 18,
+        zone: 'YELLOW',
+        discount: 25,
+        findings: 'Mild epidermis wrinkling and early softening near stems due to elevated 14.0°C ambient storage. Recommend immediate 25% B2B markdown within 18 hours.',
+        svg: `<svg viewBox="0 0 100 100" class="w-24 h-24" aria-hidden="true"><rect width="100" height="100" rx="14" fill="#faf3e6"/><path d="M50 37c-7-9-18-8-23-2-12-2-20 8-17 22 4 20 20 32 40 32s36-12 40-32c3-14-5-24-17-22-5-6-16-7-23 2Z" fill="#d94b32"/><path d="m50 40 6-12 5 10 12-5-5 12 10 5-13 2-5 10-7-10-13 2 8-10-9-8Z" fill="#47764b"/><path d="M31 49c-2 8 1 17 7 22" fill="none" stroke="#f28a65" stroke-width="4" stroke-linecap="round" opacity=".8"/><path d="M47 43c2-1 4-1 6 0" fill="none" stroke="#ef8065" stroke-width="1.5" stroke-linecap="round"/></svg>`
+      },
+      tuna: {
+        name: 'Coastal Yellowfin Tuna',
+        supplier: 'Belawan Fresh Catch Hub',
+        weight: 45,
+        price: 6.8,
+        temp: 9.0,
+        score: 38,
+        shelfHr: 8,
+        zone: 'RED',
+        discount: 50,
+        findings: 'Elevated ice-box temperature (9.0°C) accelerating surface dullness and gill oxidation. Critical RED ZONE: trigger 50% flash clearance or local food-bank dispatch within 8 hours.',
+        svg: `<svg viewBox="0 0 100 100" class="w-24 h-24" aria-hidden="true"><rect width="100" height="100" rx="14" fill="#edf2f2"/><path d="M19 52c12-18 31-25 51-17l10 5 12-11-4 20 4 20-12-11-10 5c-20 8-39 1-51-17Z" fill="#496d78"/><path d="M22 52c17-8 34-8 52 0-18 8-35 8-52 0Z" fill="#c5d0ca"/><path d="m44 39 8-11 8 13m-8 20 8 11 8-13" fill="#3c5e68" stroke="#3c5e68" stroke-linejoin="round"/><circle cx="31" cy="47" r="3" fill="#f8f6e9"/><circle cx="31" cy="47" r="1.4" fill="#243b43"/><path d="M42 42c5 6 5 14 0 20" fill="none" stroke="#9e5549" stroke-width="2" stroke-linecap="round"/><path d="M39 42c3 7 3 13 0 20m7-19c3 6 3 12 0 18" fill="none" stroke="#78939a" stroke-width="1" opacity=".8"/></svg>`
+      }
+    };
+
+    // =========================================================================
+    // STATE MANAGEMENT
     // =========================================================================
     function createInitialState() {
       return {
-        instances: [
+        currentPresetKey: 'tomatoes',
+        customImageDataUrl: null,
+        customImageName: null,
+        mysqlFilter: 'ALL',
+        batches: [
           {
-            id: 'rds-default-01',
-            name: 'rds-educloud-core',
-            service: 'RDS for PostgreSQL 16 (pgvector)',
-            region: 'ap-southeast-4',
-            endpoint: '192.168.10.12:5432',
-            status: 'ACTIVE'
+            batchId: 'HG-2026-001',
+            commodity: 'Coastal Yellowfin Tuna',
+            supplier: 'Belawan Fresh Catch Hub',
+            weightKg: 45,
+            basePrice: 6.8,
+            tempC: 9.0,
+            score: 38,
+            shelfLifeHr: 8,
+            zone: 'RED',
+            discountPct: 50,
+            rescued: false
           },
           {
-            id: 'dcs-default-01',
-            name: 'dcs-educloud-cache',
-            service: 'DCS for Redis (In-Memory)',
-            region: 'ap-southeast-4',
-            endpoint: '192.168.10.25:6379',
-            status: 'ACTIVE'
-          }
-        ],
-        indexedDocs: [
-          {
-            file: 'Modul_01_RDS_PostgreSQL_pgvector.pdf',
-            course: 'Basis Data (RDS PostgreSQL)',
-            chunks: 18,
-            status: 'Indexed'
+            batchId: 'HG-2026-002',
+            commodity: 'Market Roma Tomatoes',
+            supplier: 'Koperasi Tani Berastagi',
+            weightKg: 85,
+            basePrice: 2.4,
+            tempC: 14.0,
+            score: 66,
+            shelfLifeHr: 18,
+            zone: 'YELLOW',
+            discountPct: 25,
+            rescued: false
           },
           {
-            file: 'Modul_02_DCS_Redis_Caching.pdf',
-            course: 'Struktur Data (DCS Redis)',
-            chunks: 16,
-            status: 'Indexed'
+            batchId: 'HG-2026-003',
+            commodity: 'Highland Red Apples',
+            supplier: 'Malang Cold Storage Co-op',
+            weightKg: 120,
+            basePrice: 3.2,
+            tempC: 4.0,
+            score: 94,
+            shelfLifeHr: 72,
+            zone: 'GREEN',
+            discountPct: 0,
+            rescued: false
           }
         ],
-        redisCache: {},
+        redisVisionCache: {},
         metrics: {
-          totalQueries: 0,
+          totalInspections: 3,
           cacheHits: 0,
-          guardBlocks: 0,
-          fgInvocations: 2
-        },
-        isProvisioning: false,
-        isIngesting: false
+          foodRescuedKg: 0,
+          revenueRecoveredUsd: 0
+        }
       };
     }
 
     let state = createInitialState();
 
-    const QA_KNOWLEDGE = [
-      {
-        match: ['pgvector', 'vektor', 'rds', 'postgresql'],
-        answer: 'Pada Huawei Cloud RDS for PostgreSQL, ekstensi pgvector menambahkan tipe data vector sehingga tabel relasional (mahasiswa, mata kuliah) dan embedding materi PDF disimpan di satu database yang sama. Pencarian kemiripan dilakukan dengan operator jarak kosinus (<=>) di perintah SQL ORDER BY embedding <=> query_vector LIMIT 3.',
-        sourceChunk: '[Modul_01_RDS_PostgreSQL_pgvector.pdf · Chunk #7]'
-      },
-      {
-        match: ['redis', 'hash', 'ttl', 'dcs', 'cache'],
-        answer: 'Huawei Cloud Distributed Cache Service (DCS) for Redis bekerja di memori (RAM) dengan kompleksitas pencarian O(1). Di EduCloud-Mate, pertanyaan mahasiswa diubah menjadi key SHA-256 dan disimpan memakai perintah SETEX dengan TTL (Time-To-Live) 3600 detik agar pertanyaan berulang terjawab dalam milidetik tanpa memanggil ulang token LLM.',
-        sourceChunk: '[Modul_02_DCS_Redis_Caching.pdf · Chunk #4]'
-      },
-      {
-        match: ['jadwal', 'timeline', 'kompetisi', 'oktober', 'november', 'desember', 'ict'],
-        answer: 'Berdasarkan poster resmi Huawei ICT Competition 2026–2027 Indonesia: Batas pendaftaran peserta 9 Oktober, Preliminary Round 20 Oktober, National Final Programming 17 November, National Final Network/Cloud/Computing 18 November, National Final Innovation 19–20 November, dan Awarding Day pada 3 Desember.',
-        sourceChunk: '[Official_Timeline_Huawei_ICT_2026_2027 · Chunk #1]'
-      }
-    ];
-
-    const GUARD_KEYWORDS = ['kunci jawaban', 'bocoran soal', 'curang', 'ujian sekarang', 'bypass'];
-
     // =========================================================================
-    // HELPERS: TOAST, HASH & RENDERERS
+    // UTILITIES
     // =========================================================================
-    function showToast(message, type = 'info') {
-      const container = document.getElementById('toast-container');
-      const colors = {
+    function showToast(msg, type = 'info') {
+      const box = document.getElementById('toast-container');
+      const palette = {
         success: 'bg-emerald-700 text-white',
         warning: 'bg-amber-600 text-white',
         error: 'bg-red-700 text-white',
         info: 'bg-slate-900 text-white'
       };
       const el = document.createElement('div');
-      el.className = `px-4 py-2.5 rounded-xl shadow-lg text-xs font-semibold animate-fade ${colors[type] || colors.info}`;
-      el.textContent = message;
-      container.appendChild(el);
-      setTimeout(() => { el.remove(); }, 3200);
+      el.className = `px-4 py-2.5 rounded-xl shadow-lg text-xs font-semibold animate-fade ${palette[type] || palette.info}`;
+      el.textContent = msg;
+      box.appendChild(el);
+      setTimeout(() => el.remove(), 3200);
     }
 
     function simpleHash(str) {
@@ -568,102 +716,154 @@
       return Math.abs(h).toString(16).padStart(8, '0');
     }
 
-    function appendTerminal(text, colorClass = 'text-slate-300') {
-      const term = document.getElementById('prov-terminal');
-      const line = document.createElement('div');
-      line.className = colorClass;
-      line.textContent = text;
-      term.appendChild(line);
-      term.scrollTop = term.scrollHeight;
+    const SVG_STATUS_DOT = '<svg viewBox="0 0 8 8" class="w-2 h-2 fill-current shrink-0" aria-hidden="true"><circle cx="4" cy="4" r="3" /></svg>';
+    const SVG_CHECKMARK = '<svg viewBox="0 0 16 16" class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3.2 3.2L13 4.5" /></svg>';
+
+    function zoneBadge(zone, rescued) {
+      if (rescued) {
+        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 font-bold text-[11px]">${SVG_CHECKMARK}RESCUED</span>`;
+      }
+      if (zone === 'RED') {
+        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-red-100 text-red-800 font-bold text-[11px]">${SVG_STATUS_DOT}RED ZONE</span>`;
+      }
+      if (zone === 'YELLOW') {
+        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold text-[11px]">${SVG_STATUS_DOT}YELLOW ZONE</span>`;
+      }
+      return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[11px]">${SVG_STATUS_DOT}GREEN ZONE</span>`;
     }
 
-    function updateStepCard(stepNum, statusText, mode) {
-      const card = document.querySelector(`.prov-step-card[data-step="${stepNum}"]`);
-      if (!card) return;
-      const st = card.querySelector('.step-status');
-      st.textContent = statusText;
-      card.className = 'prov-step-card p-2.5 rounded-xl border text-xs transition ';
-      if (mode === 'running') {
-        card.className += 'border-amber-400 bg-amber-50 text-amber-900';
-      } else if (mode === 'done') {
-        card.className += 'border-emerald-400 bg-emerald-50 text-emerald-900';
+    // =========================================================================
+    // RENDERERS
+    // =========================================================================
+    function renderPreview() {
+      const box = document.getElementById('photo-preview-box');
+      const label = document.getElementById('photo-label');
+      if (state.customImageDataUrl) {
+        box.innerHTML = `<img src="${state.customImageDataUrl}" alt="Uploaded produce" class="w-full h-full object-cover" />`;
+        label.textContent = state.customImageName || 'Custom Uploaded Photo';
       } else {
-        card.className += 'border-slate-200 bg-slate-50 text-slate-700';
+        const p = PRESETS[state.currentPresetKey] || PRESETS.tomatoes;
+        box.innerHTML = p.svg;
+        label.textContent = `${p.name} (Sample)`;
       }
     }
 
     function renderAll() {
-      // Badge count
-      document.getElementById('badge-res-count').textContent = state.instances.length;
+      // Urgent badge count
+      const urgentCount = state.batches.filter(b => !b.rescued && (b.zone === 'RED' || b.zone === 'YELLOW')).length;
+      document.getElementById('badge-urgent-count').textContent = urgentCount;
 
-      // Tutor telemetry
-      const tq = state.metrics.totalQueries;
-      const ch = state.metrics.cacheHits;
-      const hitRate = tq > 0 ? Math.round((ch / tq) * 100) : 0;
-      document.getElementById('stat-total-q').textContent = tq;
-      document.getElementById('stat-cache-hits').textContent = ch;
-      document.getElementById('stat-hit-rate').textContent = `${hitRate}%`;
-      document.getElementById('stat-guard-blocks').textContent = state.metrics.guardBlocks;
+      // Tab 2: Redis Priority Queue (sorted ascending by shelfLifeHr)
+      const sorted = [...state.batches].sort((a, b) => {
+        if (a.rescued !== b.rescued) return a.rescued ? 1 : -1;
+        return a.shelfLifeHr - b.shelfLifeHr;
+      });
+      const qList = document.getElementById('redis-queue-list');
+      qList.innerHTML = sorted.map((b, idx) => {
+        const discountedPrice = (b.basePrice * (1 - b.discountPct / 100)).toFixed(2);
+        const totalRecovery = (b.weightKg * parseFloat(discountedPrice)).toFixed(2);
+        const actionBtn = b.rescued
+          ? `<span class="inline-flex items-center gap-1 text-xs font-bold text-purple-700">${SVG_CHECKMARK}Offer Dispatched ($${totalRecovery} recovered)</span>`
+          : (b.discountPct > 0
+              ? `<button type="button" data-rescue-id="${b.batchId}" class="rescue-btn px-3 py-1.5 rounded-lg bg-[#065F46] hover:bg-emerald-800 text-white text-xs font-bold transition shadow-sm">Apply ${b.discountPct}% Markdown &amp; Rescue ($${totalRecovery})</button>`
+              : `<span class="text-xs font-semibold text-emerald-700">Optimal Cold Chain · No Markdown Needed</span>`);
 
-      // Redis keys list
-      const redisBox = document.getElementById('redis-keys-list');
-      const keys = Object.keys(state.redisCache);
+        return `
+          <div class="p-3.5 rounded-xl border ${b.rescued ? 'border-purple-200 bg-purple-50/40' : b.zone === 'RED' ? 'border-red-200 bg-red-50/40' : b.zone === 'YELLOW' ? 'border-amber-200 bg-amber-50/40' : 'border-emerald-200 bg-emerald-50/30'} flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="font-mono-code text-[11px] font-bold px-2 py-0.5 rounded bg-slate-900 text-white">#${idx + 1} · ${b.batchId}</span>
+                <span class="font-bold text-sm text-slate-900">${b.commodity}</span>
+                ${zoneBadge(b.zone, b.rescued)}
+              </div>
+              <div class="text-xs text-slate-600">
+                ${b.supplier} · <strong>${b.weightKg} kg</strong> · Score: <strong>${b.score}/100</strong> · Shelf-Life: <strong class="${b.shelfLifeHr <= 12 ? 'text-red-700' : 'text-slate-800'}">${b.shelfLifeHr} hrs</strong> · Temp: ${b.tempC}°C
+              </div>
+            </div>
+            <div class="shrink-0">${actionBtn}</div>
+          </div>
+        `;
+      }).join('');
+
+      // Attach rescue handlers
+      document.querySelectorAll('.rescue-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-rescue-id');
+          const batch = state.batches.find(x => x.batchId === id);
+          if (!batch || batch.rescued) return;
+          batch.rescued = true;
+          const rev = batch.weightKg * batch.basePrice * (1 - batch.discountPct / 100);
+          state.metrics.foodRescuedKg += batch.weightKg;
+          state.metrics.revenueRecoveredUsd += rev;
+          renderAll();
+          showToast(`Rescued ${batch.weightKg} kg of ${batch.commodity} (+$${rev.toFixed(2)} recovered)!`, 'success');
+        });
+      });
+
+      // Tab 2: Redis Vision Cache Keys
+      const cacheBox = document.getElementById('redis-cache-keys');
+      const keys = Object.keys(state.redisVisionCache);
       if (keys.length === 0) {
-        redisBox.innerHTML = '<div class="text-slate-400 italic py-4 text-center">Belum ada key tersimpan di DCS Redis. Ajukan pertanyaan untuk melihat key SHA-256 + TTL.</div>';
+        cacheBox.innerHTML = '<div class="text-slate-400 italic py-4 text-center">No cached image hashes yet. Run an inspection in Module 1 to populate DCS for Redis.</div>';
       } else {
-        redisBox.innerHTML = keys.map(k => {
-          const item = state.redisCache[k];
+        cacheBox.innerHTML = keys.map(k => {
+          const c = state.redisVisionCache[k];
           return `
             <div class="p-2.5 rounded-lg bg-amber-50 border border-amber-200">
               <div class="flex items-center justify-between gap-2">
                 <span class="font-mono-code font-bold text-amber-900 truncate">${k}</span>
-                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-200 text-amber-900">TTL ${item.ttl}s</span>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-200 text-amber-900">TTL 3600s</span>
               </div>
-              <div class="text-[11px] text-slate-600 mt-1 truncate">${item.question}</div>
+              <div class="text-[11px] text-slate-600 mt-1">${c.commodity} · Score ${c.score}/100 · ${c.shelfLifeHr}h</div>
             </div>`;
         }).join('');
       }
 
-      // OBS Docs Table
-      const obsTbody = document.getElementById('obs-docs-tbody');
-      const totalChunks = state.indexedDocs.reduce((acc, d) => acc + d.chunks, 0);
-      document.getElementById('obs-total-chunks').textContent = `${totalChunks} Chunks`;
-      obsTbody.innerHTML = state.indexedDocs.map(d => `
-        <tr class="hover:bg-slate-50">
-          <td class="py-2.5 px-3 font-mono-code font-medium text-slate-800">${d.file}</td>
-          <td class="py-2.5 px-3 text-slate-600">${d.course}</td>
-          <td class="py-2.5 px-3 text-right font-semibold text-slate-800">${d.chunks}</td>
-          <td class="py-2.5 px-3 text-center">
-            <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-semibold text-[11px]">${d.status}</span>
-          </td>
-        </tr>
-      `).join('');
+      // Tab 3: RDS for MySQL Table + Dynamic SQL Query
+      const f = state.mysqlFilter;
+      let filtered = state.batches;
+      let whereClause = '';
+      if (f === 'RESCUED') {
+        filtered = state.batches.filter(b => b.rescued);
+        whereClause = " WHERE i.status = 'RESCUED'";
+      } else if (f !== 'ALL') {
+        filtered = state.batches.filter(b => b.zone === f);
+        whereClause = ` WHERE i.risk_zone = '${f}'`;
+      }
+      document.getElementById('mysql-query-preview').textContent =
+        `SELECT b.batch_id, b.commodity_name, b.weight_kg, i.freshness_score, i.est_shelf_life_hr, i.risk_zone FROM produce_batches b JOIN freshness_inspections i ON b.batch_id = i.batch_id${whereClause} ORDER BY i.est_shelf_life_hr ASC;`;
 
-      // Cloud Console Overview
-      const rdsCount = state.instances.filter(i => i.service.includes('RDS')).length;
-      const dcsCount = state.instances.filter(i => i.service.includes('DCS')).length;
-      document.getElementById('con-rds-count').textContent = rdsCount;
-      document.getElementById('con-dcs-count').textContent = dcsCount;
-      document.getElementById('con-fg-count').textContent = state.metrics.fgInvocations;
-      document.getElementById('con-hit-rate').textContent = `${hitRate}%`;
+      const tbody = document.getElementById('mysql-tbody');
+      if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" class="py-6 text-center text-slate-400 italic">No matching batch records for this filter.</td></tr>';
+      } else {
+        tbody.innerHTML = filtered.map(b => `
+          <tr class="hover:bg-slate-50">
+            <td class="py-2.5 px-3 font-mono-code font-bold text-slate-800">${b.batchId}</td>
+            <td class="py-2.5 px-3 font-semibold text-slate-900">${b.commodity}</td>
+            <td class="py-2.5 px-3 text-slate-600">${b.supplier}</td>
+            <td class="py-2.5 px-3 text-right font-mono-code">${b.weightKg}</td>
+            <td class="py-2.5 px-3 text-right font-mono-code font-bold">${b.score}/100</td>
+            <td class="py-2.5 px-3 text-right font-mono-code">${b.shelfLifeHr} hrs</td>
+            <td class="py-2.5 px-3 text-center">${zoneBadge(b.zone, b.rescued)}</td>
+          </tr>
+        `).join('');
+      }
 
-      const conTbody = document.getElementById('console-instances-tbody');
-      conTbody.innerHTML = state.instances.map(inst => `
-        <tr class="hover:bg-slate-50">
-          <td class="py-2.5 px-3 font-mono-code font-bold text-slate-900">${inst.name}</td>
-          <td class="py-2.5 px-3 text-slate-700">${inst.service}</td>
-          <td class="py-2.5 px-3 font-mono-code text-slate-600">${inst.region}</td>
-          <td class="py-2.5 px-3 font-mono-code text-slate-600">${inst.endpoint}</td>
-          <td class="py-2.5 px-3 text-center">
-            <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[11px]">● ${inst.status}</span>
-          </td>
-        </tr>
-      `).join('');
+      // Tab 4: Console KPIs
+      const hitRate = state.metrics.totalInspections > 0
+        ? Math.round((state.metrics.cacheHits / state.metrics.totalInspections) * 100)
+        : 0;
+      document.getElementById('kpi-food-kg').textContent = `${state.metrics.foodRescuedKg} kg`;
+      document.getElementById('kpi-rev-usd').textContent = `$${state.metrics.revenueRecoveredUsd.toFixed(2)}`;
+      document.getElementById('kpi-inspections').textContent = state.metrics.totalInspections;
+      document.getElementById('kpi-hit-rate').textContent = `${hitRate}%`;
     }
 
     // =========================================================================
-    // TAB SWITCHING
+    // EVENT LISTENERS
     // =========================================================================
+    // Tabs
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.getAttribute('data-tab');
@@ -673,294 +873,190 @@
         });
         btn.classList.remove('tab-inactive');
         btn.classList.add('tab-active');
-
-        document.querySelectorAll('.tab-panel').forEach(panel => {
-          panel.classList.toggle('hidden', panel.id !== target);
+        document.querySelectorAll('.tab-panel').forEach(p => {
+          p.classList.toggle('hidden', p.id !== target);
         });
       });
     });
 
-    // =========================================================================
-    // MODULE 1: AI LAB PROVISIONER HANDLERS
-    // =========================================================================
-    document.querySelectorAll('.preset-prov-btn').forEach(btn => {
+    // Sample commodity presets
+    document.querySelectorAll('.sample-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.getElementById('prov-class-code').value = btn.getAttribute('data-code');
-        document.getElementById('prov-prompt').value = btn.getAttribute('data-prompt');
-        showToast('Preset prompt dosen dipilih.', 'info');
+        const key = btn.getAttribute('data-preset');
+        const p = PRESETS[key];
+        if (!p) return;
+        state.currentPresetKey = key;
+        state.customImageDataUrl = null;
+        state.customImageName = null;
+        document.getElementById('inp-commodity').value = p.name;
+        document.getElementById('inp-supplier').value = p.supplier;
+        document.getElementById('inp-weight').value = p.weight;
+        document.getElementById('inp-price').value = p.price;
+        document.getElementById('inp-temp').value = p.temp;
+        renderPreview();
+        showToast(`Loaded sample: ${p.name}`, 'info');
       });
     });
 
-    document.getElementById('form-provision').addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (state.isProvisioning) return;
-
-      const classCode = (document.getElementById('prov-class-code').value || 'ict-lab').trim().toLowerCase().replace(/[^a-z0-9-]/g, '-');
-      const region = document.getElementById('prov-region').value;
-      const promptText = document.getElementById('prov-prompt').value.trim();
-
-      if (!promptText) {
-        showToast('Masukkan perintah terlebih dahulu.', 'warning');
-        return;
-      }
-
-      state.isProvisioning = true;
-      const runBtn = document.getElementById('btn-run-prov');
-      runBtn.disabled = true;
-      runBtn.classList.add('opacity-60');
-
-      [1, 2, 3, 4].forEach(n => updateStepCard(n, 'Menunggu...', 'idle'));
-      appendTerminal(`\n> [USER] "${promptText}"`, 'text-white font-semibold');
-
-      // Step 1: MaaS Intent
-      updateStepCard(1, 'Memproses JSON...', 'running');
-      setTimeout(() => {
-        appendTerminal(`[MaaS] Tool-Calling Router -> provision_lab_resources_skill(class_code="${classCode}", region="${region}")`, 'text-purple-300');
-        updateStepCard(1, 'Selesai (JSON OK)', 'done');
-
-        // Step 2: RDS PostgreSQL
-        updateStepCard(2, 'Creating RDS...', 'running');
-        setTimeout(() => {
-          const rdsName = `rds-${classCode}`;
-          const ipOctet = 30 + state.instances.length * 3;
-          appendTerminal(`[SDK:rds] RdsClient.create_instance(name="${rdsName}", engine="PostgreSQL 16", flavor="rds.pg.n1.large.2")`, 'text-sky-300');
-          appendTerminal(`[SQL] CREATE EXTENSION IF NOT EXISTS vector; -> OK`, 'text-emerald-300');
-          updateStepCard(2, 'RDS Active', 'done');
-
-          // Step 3: DCS Redis
-          updateStepCard(3, 'Creating DCS...', 'running');
-          setTimeout(() => {
-            const dcsName = `dcs-${classCode}`;
-            appendTerminal(`[SDK:dcs] DcsClient.create_instance(name="${dcsName}", engine="Redis", vpc="vpc-campus-educloud-01")`, 'text-amber-300');
-            updateStepCard(3, 'DCS Active', 'done');
-
-            // Step 4: Finalize
-            updateStepCard(4, 'Binding VPC...', 'running');
-            setTimeout(() => {
-              state.instances.push(
-                {
-                  id: `rds-${Date.now()}`,
-                  name: rdsName,
-                  service: 'RDS for PostgreSQL 16 (pgvector)',
-                  region,
-                  endpoint: `192.168.10.${ipOctet}:5432`,
-                  status: 'ACTIVE'
-                },
-                {
-                  id: `dcs-${Date.now() + 1}`,
-                  name: dcsName,
-                  service: 'DCS for Redis (In-Memory)',
-                  region,
-                  endpoint: `192.168.10.${ipOctet + 1}:6379`,
-                  status: 'ACTIVE'
-                }
-              );
-              appendTerminal(`[DONE] Provisioning selesai! ${rdsName} & ${dcsName} aktif di ${region}.`, 'text-emerald-400 font-semibold');
-              updateStepCard(4, 'Siap Dipakai ✓', 'done');
-              state.isProvisioning = false;
-              runBtn.disabled = false;
-              runBtn.classList.remove('opacity-60');
-              renderAll();
-              showToast(`Berhasil provision ${rdsName} & ${dcsName}!`, 'success');
-            }, 600);
-          }, 700);
-        }, 750);
-      }, 550);
-    });
-
-    // =========================================================================
-    // MODULE 2: SMART LMS TUTOR & DCS REDIS CACHE HANDLERS
-    // =========================================================================
-    function addChatMessage(role, htmlBody, badgeHtml = '') {
-      const box = document.getElementById('chat-messages');
-      const wrap = document.createElement('div');
-      wrap.className = role === 'user'
-        ? 'self-end bg-[#4C1D95] text-white rounded-xl p-3 max-w-[85%] shadow-sm animate-fade'
-        : 'self-start bg-white border border-slate-200 rounded-xl p-3 max-w-[92%] shadow-sm animate-fade';
-      wrap.innerHTML = `
-        <div class="flex items-center justify-between gap-2 mb-1 flex-wrap">
-          <span class="text-[11px] font-bold ${role === 'user' ? 'text-purple-200' : 'text-purple-800'}">
-            ${role === 'user' ? 'Mahasiswa Semester 3' : 'EduCloud-Mate AI Tutor'}
-          </span>
-          ${badgeHtml}
-        </div>
-        <div class="text-sm leading-relaxed ${role === 'user' ? 'text-white' : 'text-slate-700'}">${htmlBody}</div>
-      `;
-      box.appendChild(wrap);
-      box.scrollTop = box.scrollHeight;
-    }
-
-    function handleTutorQuestion(questionText) {
-      const q = questionText.trim();
-      if (!q) return;
-      const course = document.getElementById('tutor-course').value;
-      addChatMessage('user', q);
-
-      const lowerQ = q.toLowerCase();
-      // 1. Check ModelArts Guard
-      if (GUARD_KEYWORDS.some(kw => lowerQ.includes(kw))) {
-        state.metrics.totalQueries += 1;
-        state.metrics.guardBlocks += 1;
-        const badge = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-800">🛡 ModelArts Guard · BLOCKED</span>';
-        addChatMessage(
-          'bot',
-          '<strong>Permintaan diblokir oleh Huawei Cloud ModelArts Guard.</strong> Untuk menjaga integritas akademik, EduCloud-Mate tidak memberikan kunci jawaban ujian secara langsung. Silakan tanyakan konsep materi atau latihan langkah demi langkah.',
-          badge
-        );
-        renderAll();
-        showToast('ModelArts Guard memblokir prompt tidak sesuai integritas akademik.', 'error');
-        return;
-      }
-
-      // 2. Check DCS for Redis Cache
-      const cacheKey = `ict_faq:${simpleHash(course + ':' + lowerQ)}`;
-      state.metrics.totalQueries += 1;
-
-      if (state.redisCache[cacheKey]) {
-        state.metrics.cacheHits += 1;
-        const cached = state.redisCache[cacheKey];
-        const badge = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">⚡ DCS REDIS CACHE HIT · 6 ms (0 Token LLM)</span>';
-        addChatMessage(
-          'bot',
-          `${cached.answer}<div class="mt-1.5 text-[11px] font-mono-code text-emerald-700">Key: ${cacheKey} · Sumber: ${cached.sourceChunk}</div>`,
-          badge
-        );
-        renderAll();
-        showToast('DCS Redis Cache Hit! Respon 6 ms & hemat token LLM.', 'success');
-        return;
-      }
-
-      // 3. Cache Miss -> RDS PostgreSQL (pgvector) + ModelArts MaaS
-      let matched = QA_KNOWLEDGE.find(item => item.match.some(m => lowerQ.includes(m)));
-      if (!matched) {
-        matched = {
-          answer: `Berdasarkan dokumen kuliah <strong>${course}</strong> yang tersimpan di RDS for PostgreSQL (pgvector), konsep ini dapat dipelajari bertahap melalui integrasi SQL, struktur data caching di DCS Redis, dan latihan modul di Shixizhi Learning Space.`,
-          sourceChunk: `[${state.indexedDocs[0]?.file || 'LMS_Syllabus.pdf'} · Cosine Match]`
-        };
-      }
-
-      const badge = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">🔍 CACHE MISS → RDS pgvector + MaaS · 1,120 ms</span>';
-      addChatMessage(
-        'bot',
-        `${matched.answer}<div class="mt-1.5 text-[11px] font-mono-code text-slate-500">Disimpan ke DCS Redis (${cacheKey}, TTL 3600s) · ${matched.sourceChunk}</div>`,
-        badge
-      );
-
-      state.redisCache[cacheKey] = {
-        question: q,
-        answer: matched.answer,
-        sourceChunk: matched.sourceChunk,
-        ttl: 3600
+    // Real photo upload
+    document.getElementById('file-upload').addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        state.customImageDataUrl = ev.target.result;
+        state.customImageName = file.name;
+        renderPreview();
+        showToast(`Loaded photo: ${file.name}`, 'success');
       };
+      reader.readAsDataURL(file);
+    });
+
+    // Run Inspection Form
+    document.getElementById('form-inspect').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const commodity = (document.getElementById('inp-commodity').value || 'Fresh Produce').trim();
+      const supplier = (document.getElementById('inp-supplier').value || 'Local SME Supplier').trim();
+      const weightKg = Math.max(1, parseFloat(document.getElementById('inp-weight').value) || 50);
+      const basePrice = Math.max(0.5, parseFloat(document.getElementById('inp-price').value) || 2.5);
+      const tempC = parseFloat(document.getElementById('inp-temp').value) || 8.0;
+
+      const cacheFingerprint = `${commodity.toLowerCase()}|${tempC}|${state.customImageName || state.currentPresetKey}`;
+      const cacheKey = `inspect:${simpleHash(cacheFingerprint)}`;
+      state.metrics.totalInspections += 1;
+
+      let result;
+      let isCacheHit = false;
+
+      if (state.redisVisionCache[cacheKey]) {
+        isCacheHit = true;
+        state.metrics.cacheHits += 1;
+        result = state.redisVisionCache[cacheKey];
+      } else {
+        const preset = PRESETS[state.currentPresetKey];
+        let score, shelfHr, findings;
+        if (!state.customImageDataUrl && preset && commodity === preset.name && tempC === preset.temp) {
+          score = preset.score;
+          shelfHr = preset.shelfHr;
+          findings = preset.findings;
+        } else {
+          // Deterministic scoring based on storage temperature
+          score = Math.max(25, Math.min(96, Math.round(95 - Math.max(0, tempC - 4) * 3.8)));
+          shelfHr = score >= 80 ? 64 : (score >= 55 ? 16 : 7);
+          findings = tempC > 10
+            ? `Elevated storage temperature (${tempC}°C) accelerating surface moisture loss for ${commodity}. Dynamic markdown recommended.`
+            : `Cold-chain holding (${tempC}°C) maintaining acceptable visual integrity for ${commodity}.`;
+        }
+        const zone = shelfHr > 24 ? 'GREEN' : (shelfHr > 12 ? 'YELLOW' : 'RED');
+        const discountPct = zone === 'GREEN' ? 0 : (zone === 'YELLOW' ? 25 : 50);
+        result = { commodity, score, shelfLifeHr: shelfHr, zone, discountPct, findings };
+        state.redisVisionCache[cacheKey] = result;
+
+        // Save new batch into RDS for MySQL state & Redis Priority Queue
+        const nextNum = String(state.batches.length + 1).padStart(3, '0');
+        state.batches.unshift({
+          batchId: `HG-2026-${nextNum}`,
+          commodity,
+          supplier,
+          weightKg,
+          basePrice,
+          tempC,
+          score,
+          shelfLifeHr: shelfHr,
+          zone,
+          discountPct,
+          rescued: false
+        });
+      }
+
+      // Render inspection output panel
+      const srcBadge = document.getElementById('res-source-badge');
+      if (isCacheHit) {
+        srcBadge.className = 'text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800';
+        srcBadge.innerHTML = '<svg viewBox="0 0 16 16" class="inline-block w-3.5 h-3.5 mr-1 align-[-2px]" fill="currentColor" aria-hidden="true"><path d="M9.2 1.5 3.7 8h3.5l-.5 6.5L12.3 7H8.8z" /></svg>DCS REDIS CACHE HIT · 5 ms (0 VLM Tokens)';
+        showToast('DCS Redis Cache Hit! Saved Vision API call.', 'success');
+      } else {
+        srcBadge.className = 'text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-100 text-amber-800';
+        srcBadge.innerHTML = '<svg viewBox="0 0 16 16" class="inline-block w-3.5 h-3.5 mr-1 align-[-2px]" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="6.8" cy="6.8" r="4.3" /><path d="m10 10 3.2 3.2" /></svg>ECS + VLM INFERENCE · 850 ms → Cached in Redis';
+        showToast(`Inspected ${commodity}: ${result.zone} ZONE (${result.shelfLifeHr}h left)`, result.zone === 'RED' ? 'error' : 'info');
+      }
+
+      document.getElementById('res-score').textContent = `${result.score}`;
+      document.getElementById('res-shelf').textContent = `${result.shelfLifeHr}h`;
+      document.getElementById('res-discount').textContent = result.discountPct > 0 ? `-${result.discountPct}%` : '0%';
+      document.getElementById('res-zone-text').textContent = `${result.zone} ZONE`;
+      document.getElementById('res-findings').innerHTML = `<strong>Visual AI Findings:</strong> ${result.findings} <span class="font-mono-code text-[11px] text-slate-500 block mt-1">Redis Key: ${cacheKey} (TTL 3600s)</span>`;
+
+      const discountedUnit = (basePrice * (1 - result.discountPct / 100)).toFixed(2);
+      const broadcastMsg = result.discountPct > 0
+        ? `[HARVESTGUARD-AI RESCUE ALERT] ${weightKg} kg ${commodity} from ${supplier} (${result.shelfLifeHr}h optimal window left). Dynamic Markdown: -${result.discountPct}% ($${discountedUnit}/kg). Reply CLAIM to reserve for B2B kitchen or Food Bank pickup!`
+        : `[HARVESTGUARD-AI STATUS] ${weightKg} kg ${commodity} is in GREEN ZONE (${result.shelfLifeHr}h shelf-life). Standard retail price $${basePrice.toFixed(2)}/kg maintained.`;
+      document.getElementById('res-broadcast').textContent = broadcastMsg;
+
       renderAll();
+    });
+
+    // Copy rescue message (sandbox-safe fallback)
+    document.getElementById('btn-copy-msg').addEventListener('click', () => {
+      const txt = document.getElementById('res-broadcast').textContent;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(() => showToast('Rescue message copied!', 'success')).catch(() => fallbackCopy(txt));
+      } else {
+        fallbackCopy(txt);
+      }
+    });
+
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); showToast('Rescue message copied!', 'success'); } catch (err) {}
+      document.body.removeChild(ta);
     }
 
-    document.querySelectorAll('.quick-q-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const q = btn.getAttribute('data-q');
-        document.getElementById('tutor-input').value = q;
-        handleTutorQuestion(q);
-      });
-    });
-
-    document.getElementById('form-tutor').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const inp = document.getElementById('tutor-input');
-      handleTutorQuestion(inp.value);
-      inp.value = '';
-    });
-
-    document.getElementById('btn-flush-redis').addEventListener('click', () => {
-      state.redisCache = {};
+    // Flush Redis cache
+    document.getElementById('btn-flush-cache').addEventListener('click', () => {
+      state.redisVisionCache = {};
       renderAll();
-      showToast('Semua key di DCS for Redis berhasil dibersihkan.', 'warning');
+      showToast('DCS for Redis Vision cache flushed.', 'warning');
     });
 
-    // =========================================================================
-    // MODULE 3: OBS AUTO-INGESTION & FUNCTIONGRAPH HANDLERS
-    // =========================================================================
-    let selectedChunks = 24;
-    document.querySelectorAll('.obs-file-btn').forEach(btn => {
+    // MySQL filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.getElementById('obs-filename').value = btn.getAttribute('data-file');
-        document.getElementById('obs-course').value = btn.getAttribute('data-course');
-        selectedChunks = parseInt(btn.getAttribute('data-chunks'), 10) || 20;
-        showToast(`File ${btn.getAttribute('data-file')} siap diunggah ke OBS.`, 'info');
+        state.mysqlFilter = btn.getAttribute('data-filter');
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.className = 'filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200';
+        });
+        btn.className = 'filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-800 text-white';
+        renderAll();
       });
     });
 
-    document.getElementById('form-obs-upload').addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (state.isIngesting) return;
-
-      const fileName = (document.getElementById('obs-filename').value || 'Modul_Baru.pdf').trim();
-      const courseName = (document.getElementById('obs-course').value || 'ICT Competition').trim();
-      const bar = document.getElementById('obs-progress-bar');
-      const label = document.getElementById('obs-stage-label');
-      const btn = document.getElementById('btn-obs-trigger');
-
-      state.isIngesting = true;
-      btn.disabled = true;
-      btn.classList.add('opacity-60');
-
-      bar.style.width = '25%';
-      label.textContent = '1/4 Uploading to OBS Bucket...';
-
-      setTimeout(() => {
-        bar.style.width = '50%';
-        label.textContent = '2/4 OBS Event Trigger -> FunctionGraph Python';
-        setTimeout(() => {
-          bar.style.width = '78%';
-          label.textContent = '3/4 Chunking PDF & MaaS Embeddings...';
-          setTimeout(() => {
-            bar.style.width = '100%';
-            label.textContent = '4/4 Upserted to RDS pgvector ✓';
-            state.metrics.fgInvocations += 1;
-            const existing = state.indexedDocs.find(d => d.file === fileName);
-            if (!existing) {
-              state.indexedDocs.unshift({
-                file: fileName,
-                course: courseName,
-                chunks: selectedChunks,
-                status: 'Indexed'
-              });
-            }
-            state.isIngesting = false;
-            btn.disabled = false;
-            btn.classList.remove('opacity-60');
-            renderAll();
-            showToast(`FunctionGraph selesai mengindeks ${fileName} ke RDS pgvector!`, 'success');
-          }, 600);
-        }, 650);
-      }, 500);
-    });
-
-    // =========================================================================
-    // GLOBAL RESET DEMO BUTTON
-    // =========================================================================
+    // Reset Demo
     document.getElementById('btn-reset-demo').addEventListener('click', () => {
       state = createInitialState();
-      [1, 2, 3, 4].forEach(n => updateStepCard(n, 'Menunggu...', 'idle'));
-      document.getElementById('prov-terminal').innerHTML = `
-        <div class="text-purple-300">[INIT] EduCloud-Mate Provisioning Agent v1.0 di-reset dan siap untuk rekaman video.</div>
-        <div class="text-slate-400">[INFO] Endpoint ModelArts Studio (MaaS): https://api.modelarts-maas.com/openai/v1</div>
-        <div class="text-slate-400">[INFO] Klik "Jalankan AI Agent Skill" untuk mendemokan pembuatan RDS PostgreSQL &amp; DCS Redis.</div>
-      `;
-      document.getElementById('chat-messages').innerHTML = `
-        <div class="bg-white border border-slate-200 rounded-xl p-3 max-w-[90%] shadow-sm">
-          <div class="text-[11px] font-bold text-purple-700 mb-1">EduCloud-Mate AI Tutor</div>
-          <p class="text-sm text-slate-700 leading-relaxed">
-            Halo mahasiswa Semester 3! Tanyakan materi Basis Data, Struktur Data, atau Huawei ICT Competition. Pertanyaan pertama dicari di <strong>RDS PostgreSQL (pgvector)</strong>, lalu disimpan di <strong>DCS for Redis</strong> agar pertanyaan berikutnya terjawab instan (&lt;10 ms).
-          </p>
-        </div>
-      `;
-      document.getElementById('obs-progress-bar').style.width = '0%';
-      document.getElementById('obs-stage-label').textContent = 'Idle (Zero Compute Cost)';
+      const p = PRESETS.tomatoes;
+      document.getElementById('inp-commodity').value = p.name;
+      document.getElementById('inp-supplier').value = p.supplier;
+      document.getElementById('inp-weight').value = p.weight;
+      document.getElementById('inp-price').value = p.price;
+      document.getElementById('inp-temp').value = p.temp;
+      document.getElementById('res-source-badge').className = 'text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600';
+      document.getElementById('res-source-badge').textContent = 'Awaiting Inspection';
+      document.getElementById('res-score').textContent = '--';
+      document.getElementById('res-shelf').textContent = '--';
+      document.getElementById('res-discount').textContent = '--';
+      document.getElementById('res-zone-text').textContent = 'RISK ZONE';
+      document.getElementById('res-broadcast').textContent = '# Automated B2B / Food Bank clearance alert will appear here once a batch is inspected.';
+      renderPreview();
       renderAll();
-      showToast('Demo berhasil di-reset ke kondisi awal.', 'info');
+      showToast('Demo reset to initial state.', 'info');
     });
 
     // Initial render
+    renderPreview();
     renderAll();
   </script>
 </body>
